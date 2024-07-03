@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IF Exchange</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./assets/style/style.css">
+  <link rel="shortcut icon" href="./assets/img/png/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="bg-[#0b0e11]">
+
+  <!-- header  -->
+  <section>
+    <div class="main-bg relative">
+      <header class="px-4 lg:px-8 2xl:px-20 py-4 md:py-5  relative">
+        <nav class="flex flex-row items-center w-full">
+          <a href="#" class="w-full max-w-[110px] md:max-w-[179px] font-bold text-white lg:flex">
+            <img src="./assets/img/png/circle-logo.png" alt="logo" class="size-8 m-1">
+            <div class="align-middle text-lg p-1 max-md:hidden">IF Exchange</div>
+          </a>
+          <ul class="list-none p-0 ml-12 xl:ml-20 hidden lg:flex items-center gap-x-7 xl:gap-x-14">
+            <li>
+              <a href="#"
+                class="text-base font-bold text-white transition-all duration-300 ease-in-out hover:text-white">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="text-base font-bold text-[#b9b8c8] transition-all duration-300 ease-in-out hover:text-white">
+                Community </a>
+            </li>
+            <li>
+              <a href="#"
+                class="text-base font-bold text-[#b9b8c8] transition-all duration-300 ease-in-out hover:text-whi8 m-1">
+                Governance
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="text-base font-bold text-[#b9b8c8] transition-all duration-300 ease-in-out hover:text-white">
+                Docs </a>
+            </li>
+            <li>
+              <a href="#"
+                class="text-base font-bold text-[#b9b8c8] transition-all duration-300 ease-in-out hover:text-white">
+                FAQ
+              </a>
+            </li>
+          </ul>
+
+          <div class="ml-auto flex flex-row gap-x-3 sm:gap-x-4 items-center">
+
+            <a href="/trade/BTC-USD"
+              class="py-1 px-2 sm:py-2 sm:px-5 md:py-3 md:px-6  bg-[#3772ff] rounded-full text-white font-bold transition-all duration-300 ease-in-out hover:bg-opacity-85 text-[10px] sm:text-[12px] lg:text-sm ">
+              Start trading</a>
+            <button class="lg:hidden " onclick="toggleSidebar()">
+              <svg viewBox="64 64 896 896" focusable="false" data-icon="menu" class="w-4 h-4 sm:w-6 sm:h-6" fill="white"
+                aria-hidden="true">
+                <path
+                  d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+
+        <div id="sidebar" class="sidebar fixed z-30 top-0 left-0 h-full w-full bg-[#181a20] text-white px-4">
+          <div class="flex justify-between items-center py-8 ">
+
+            <a href="#" class="w-full" text-lg p-1>
+              <img src="./assets/img/png/circle-logo.png" alt="logo" class="size-7 m-1">
+            </a>
+
+            <button onclick="toggleSidebar()">
+              <svg fill-rule="evenodd" viewBox="64 64 896 896" focusable="false" data-icon="close"
+                class="w-4 h-4 sm:w-6 sm:h-6" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z">
+                </path>
+              </svg>
+            </button>
+          </div>
+
+          <ul class="list-none p-0 ml-2 flex flex-col items-start gap-6 mt-5">
+            <li>
+              <a href="#" onclick="toggleSidebar()"
+                class="text-base font-bold text-white transition-all duration-300 ease-in-out hover:text-white">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="toggleSidebar()"
+                class="text-base font-bold text-[#b9b8c8] transition-all duration-300 ease-in-out hover:text-white">
+                Community </a>
+            </li>
+            <li>
+              <a href="#" onclick="toggleSidebar()"
+                class="text-base font-bold text-[#b9b8c8] transition-all duration-300 ease-in-out hover:text-white">
+                Governance
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="toggleSidebar()"
+                class="text-base font-bold text-[#b9b8c8] transition-all duration-300 ease-in-out hover:text-white">
+                Docs </a>
+            </li>
+            <li>
+              <a href="#" onclick="toggleSidebar()"
+                class="text-base font-bold text-[#b9b8c8] transition-all duration-300 ease-in-out hover:text-white">
+                FAQ
+              </a>
+            </li>
+            <li class="mt-4">
+              <a href="#" onclick="toggleSidebar()"
+                class="  py-2  px-5 md:py-3 md:px-6  bg-[#3772ff] rounded-md text-white font-bold transition-all duration-300 ease-in-out hover:bg-opacity-85  text-[12px] lg:text-sm ">
+                Start trading</a>
+            </li>
+
+
+          </ul>
+        </div>
+      </header>
+
+
+      <!-- hero  -->
+      <div class="flex flex-col min-h-[calc(100vh-90px)] justify-center items-center">
+        <div class="text-center max-w-[750px] mx-auto px-4 md:px-0  my-20  ">
+          <h1 class="text-[32px] md:text-[72px] text-white font-bold ">Trade Everything</h1>
+          <p class="  text-lg   text-white">digital assets, commodities, stocks, forex</p>
+          <p class="text-base md:text-[36px] font-bold mt-2 md:mt-9 text-white">For <span
+              class="text-[#3772ff]">anyone</span>,
+            <span class="text-[#3772ff]">anywhere</span> and <span class="text-[#3772ff]">anytime</span>
+          </p>
+          <p class="mt-5 md:mt-9 text-[#777e90] text-lg leading-[130%]">
+            Trade perps directly from your wallet or custodian on a secure, fully decentralized exchange, powered by zk-rollups.
+          </p>
+
+          <div class=" flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-8 gap-y-4 mt-10">
+            <a href="/trade/BTC-USD" target="_blank"><img src="./assets/img/png/BTC-USD.webp" loading="lazy"
+                class="w-[30px] h-[30px] md:w-10 md:h-10 overflow-hidden rounded-full  "></a><a href=""
+              target="_blank"><img src="./assets/img/png/ETH-USD.webp" loading="lazy"
+                class="w-[30px] h-[30px] md:w-10 md:h-10 overflow-hidden rounded-full  "></a><a href=""
+              target="_blank"><img src="./assets/img/png/TSLA-USD.webp" loading="lazy"
+                class="w-[30px] h-[30px] md:w-10 md:h-10 overflow-hidden rounded-full  "></a><a href=""
+              target="_blank"><img src="./assets/img/png/NVDA-USD.webp" loading="lazy"
+                class="w-[30px] h-[30px] md:w-10 md:h-10 overflow-hidden rounded-full  "></a><a href=""
+              target="_blank"><img src="./assets/img/png/XAU-USD.webp" loading="lazy"
+                class="w-[30px] h-[30px] md:w-10 md:h-10 overflow-hidden rounded-full  "></a><a href=""
+              target="_blank"><img src="./assets/img/png/ZT-USD.webp" loading="lazy"
+                class="w-[30px] h-[30px] md:w-10 md:h-10 overflow-hidden rounded-full  "></a><a href=""
+              target="_blank"><img src="./assets/img/png/EUR-USD.webp" loading="lazy"
+                class="w-[30px] h-[30px] md:w-10 md:h-10 overflow-hidden rounded-full  "></a><a href=""
+              target="_blank"><img src="./assets/img/png/GBP-USD.webp" loading="lazy"
+                class="w-[30px] h-[30px] md:w-10 md:h-10 overflow-hidden rounded-full  "></a><a href=""
+              target="_blank"><img src="./assets/img/png/icon-market-more.webp" loading="lazy"
+                class="w-[30px] h-[30px] md:w-10 md:h-10 overflow-hidden rounded-full  "></a></div>
+
+          <div class="flex flex-col justify-center items-center mt-14">
+            <a href="/trade/BTC-USD"
+              class="py-3 px-6  bg-[#3772ff] rounded-full text-white font-bold transition-all duration-300 ease-in-out hover:bg-opacity-85  text-sm ">
+              Launch Testnet</a>
+
+            <p class="text-center mt-10 md:mt-12 text-sm md:text-base text-[#777e90]">
+              Powered by
+            </p>
+            <div class="flex items-center gap-3  justify-between w-full py-5 md:py-8">
+              <a href="" target="_blank"><img src="./assets/img/png/logo_pyth.png" loading="lazy" class="w-full max-w-[100px] h-auto  md:max-w-[150px]"></a>
+              <a href="" target="_blank"><img src="./assets/img/png/logo_zkevm.png" loading="lazy" class="w-full max-w-[100px] h-auto  md:max-w-[150px]"></a>
+              <a href="" target="_blank"><img src="./assets/img/png/logo_axelar.png" loading="lazy" class="w-full max-w-[100px] h-auto  md:max-w-[150px]"></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Why Trade on OpenWorld Exchange ? -->
+  <section>
+    <div class="bg-[#080321] pt-16">
+      <div class="text-center px-4 md:px-10 ">
+        <h1 class="text-white text-2xl md:text-5xl font-bold ">Why Trade on IF Exchange ?</h1>
+
+        <p class="mt-5 mb-10 max-w-[500px] md:max-w-[760px] text-sm md:text-base  mx-auto  text-[#777e90]">
+          It is a decentralised derivatives exchange offering the same liquidity, leverage, fast execution, low fees as centralised exchanges while also offering all the benefits of decentralisation.
+        </p>
+        <div class="max-w-[1120px] mx-auto">
+          <img src="./assets/img/png/market-list-card.webp" alt="list" class="w-full h-auto rounded-md">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- cards  -->
+  <section class="bg-[#080321]">
+    <div class="flex flex-col gap-y-14 md:gap-y-32 md:pt-32 pt-16 max-w-[1152px] mx-auto px-4 ">
+      <div class="flex flex-col md:flex-row gap-5 items-center justify-between">
+        <div class="lg:max-w-[516px] max-w-[400px] w-full ">
+          <h3 class="text-white text-lg md:text-2xl lg:text-4xl font-bold !leading-[140%]">Go Long or Short with Leverage</h3>
+          <p class="text-[#777e90] text-sm md:text-base lg::text-xl mt-2.5 md:mt-5 ">Trade perpetual futures for diffeent assets, not only crytpo.
+            Go long or short with the leverage of your choice. Invest in liquidity pools to earn passive income.
+          </p>
+        </div>
+        <div class="flex lg:gap-5 gap-3 max-w-[400px] md:max-w-[577px] w-full justify-between">
+          <div
+            class="max-w-[130px]  md:max-w-[180px] w-full flex flex-col justify-center items-center text-center bg-[#151d4d] rounded-[20px] py-6 md:py-9 px-2 ">
+            <div class="lg:max-h-[120px] max-h-[80px]  flex flex-col justify-center">
+              <img src="./assets/img/png/icon-card-1.webp" alt="card" class="h-full">
+            </div>
+            <p class="text-white text-[10px] md:text-[12px] lg:text-base font-medium mt-4 md:mt-6">Earning</p>
+
+          </div>
+          <div
+            class="max-w-[130px]  md:max-w-[180px] w-full flex flex-col justify-center items-center text-center bg-[#151d4d] rounded-[20px] py-6 md:py-9 px-2 ">
+            <div class="lg:max-h-[120px] max-h-[80px]  flex flex-col justify-center">
+              <img src="./assets/img/png/icon-card-2.webp" alt="card" class="h-full">
+            </div>
+            <p class="text-white text-[10px] md:text-[12px] lg:text-base font-medium mt-4 md:mt-6">Long&Short
+            </p>
+
+          </div>
+          <div
+            class="max-w-[130px]  md:max-w-[180px] w-full flex flex-col justify-center items-center text-center bg-[#151d4d] rounded-[20px] py-6 md:py-9 px-2 ">
+            <div class="lg:max-h-[120px] max-h-[80px]  flex flex-col justify-center">
+              <img src="./assets/img/png/icon-card-3.webp" alt="card" class="h-full">
+            </div>
+            <p class="text-white text-[10px] md:text-[12px] lg:text-base font-medium mt-4 md:mt-6">Leverage
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-5 items-center justify-between">
+        <div class="lg:max-w-[516px] max-w-[400px] w-full ">
+          <h3 class="text-white text-lg md:text-2xl lg:text-4xl font-bold !leading-[140%]">
+            Self-custody of Assets
+          </h3>
+          <p class="text-[#777e90] text-sm md:text-base lg::text-xl mt-2.5 md:mt-5 ">
+            Trade directly via your Web3 wallet. Your key, your assets. IF Exchange uses smart contracts on a secure ZK-rollup network.
+            It is trustless, permissionless and decentralised.
+          </p>
+        </div>
+        <div class="flex lg:gap-5 gap-3 max-w-[400px] md:max-w-[577px] w-full justify-between">
+          <div
+            class="max-w-[130px]  md:max-w-[180px] w-full flex flex-col justify-center items-center text-center bg-[#151d4d] rounded-[20px] py-6 md:py-9 px-2 ">
+            <div class="lg:max-h-[120px] max-h-[80px]  flex flex-col justify-center">
+              <img src="./assets/img/png/icon-card-4.webp" alt="card" class="h-full">
+            </div>
+            <p class="text-white text-[10px] md:text-[12px] lg:text-base font-medium mt-4 md:mt-6">Account Security
+            </p>
+
+          </div>
+          <div
+            class="max-w-[130px]  md:max-w-[180px] w-full flex flex-col justify-center items-center text-center bg-[#151d4d] rounded-[20px] py-6 md:py-9 px-2 ">
+            <div class="lg:max-h-[120px] max-h-[80px]  flex flex-col justify-center">
+              <img src="./assets/img/png/icon-card-5.webp" alt="card" class="h-full">
+            </div>
+            <p class="text-white text-[10px] md:text-[12px] lg:text-base font-medium mt-4 md:mt-6">Transaction Speed
+            </p>
+
+          </div>
+          <div
+            class="max-w-[130px]  md:max-w-[180px] w-full flex flex-col justify-center items-center text-center bg-[#151d4d] rounded-[20px] py-6 md:py-9 px-2 ">
+            <div class="lg:max-h-[120px] max-h-[80px]  flex flex-col justify-center">
+              <img src="./assets/img/png/icon-card-6.webp" alt="card" class="h-full">
+            </div>
+            <p class="text-white text-[10px] md:text-[12px] lg:text-base font-medium mt-4 md:mt-6">Save Gas Cost
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-5 items-center justify-between">
+        <div class="lg:max-w-[516px] max-w-[400px] w-full ">
+          <h3 class="text-white text-lg md:text-2xl lg:text-4xl font-bold !leading-[140%]">Aggregated Liquidity
+          </h3>
+          <p class="text-[#777e90] text-sm md:text-base lg::text-xl mt-2.5 md:mt-5 ">
+            Trade with deep aggregated liquidity from leading perps protocols on different blockchain networks.
+          </p>
+        </div>
+        <div class="flex lg:gap-5 gap-3 max-w-[400px] md:max-w-[577px] w-full justify-between">
+          <div
+            class="  w-full flex flex-col justify-center items-center text-center bg-[#151d4d] rounded-[20px] py-6 md:py-9 px-2 ">
+            <div class="max-h-[120px]  min-h-[160px] md:min-h-[100px] flex flex-col justify-center">
+              <img src="./assets/img/png/icon-card-7.webp" alt="card" class="h-full">
+            </div>
+            <p class="text-white text-[10px] md:text-[12px] lg:text-base font-medium mt-4 md:mt-6">Aggregated liquidity
+              via
+              multi-chain
+              deployment
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-5 items-center justify-between">
+        <div class="lg:max-w-[516px] max-w-[400px] w-full ">
+          <h3 class="text-white text-lg md:text-2xl lg:text-4xl font-bold !leading-[140%]">Interoperable and Composable
+          </h3>
+          <p class="text-[#777e90] text-sm md:text-base lg::text-xl mt-2.5 md:mt-5 ">IF Exchange is built to
+            interact with any DeFi protocol. Other DEFI protocols can use the exchange or invest into the liquidity pools to earn yield.
+          </p>
+        </div>
+        <div class="flex lg:gap-5 gap-3 max-w-[400px] md:max-w-[577px] w-full justify-between">
+          <div
+            class="max-w-[130px]  md:max-w-[180px] w-full flex flex-col justify-center items-center text-center bg-[#151d4d] rounded-[20px] py-6 md:py-9 px-2 ">
+            <div class="lg:max-h-[120px] max-h-[80px]  flex flex-col justify-center">
+              <img src="./assets/img/png/icon-card-8.webp" alt="card" class="h-full">
+            </div>
+            <p class="text-white text-[10px] md:text-[12px] lg:text-base font-medium mt-4 md:mt-6">
+            </p>
+
+          </div>
+          <div
+            class="max-w-[130px]  md:max-w-[180px] w-full flex flex-col justify-center items-center text-center bg-[#151d4d] rounded-[20px] py-6 md:py-9 px-2 ">
+            <div class="lg:max-h-[120px] max-h-[80px]  flex flex-col justify-center">
+              <img src="./assets/img/png/icon-card-9.webp" alt="card" class="h-full">
+            </div>
+            <p class="text-white text-[10px] md:text-[12px] lg:text-base font-medium mt-4 md:mt-6">
+            </p>
+
+          </div>
+          <div
+            class="max-w-[130px]  md:max-w-[180px] w-full flex flex-col justify-center items-center text-center bg-[#151d4d] rounded-[20px] py-6 md:py-9 px-2 ">
+            <div class="lg:max-h-[120px] max-h-[80px]  flex flex-col justify-center">
+              <img src="./assets/img/png/icon-card-10.webp" alt="card" class="h-full">
+            </div>
+            <p class="text-white text-[10px] md:text-[12px] lg:text-base font-medium mt-4 md:mt-6">
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Linked Networks -->
+  <section>
+    <div class="bg-[#080321] py-20 md:py-32">
+      <div class="max-w-[1150px] mx-auto px-4">
+        <h1 class="text-center text-white text-2xl md:text-5xl font-bold ">Linked Networks
+        </h1>
+        <div class="flex flex-wrap gap-y-6 sm:gap-y-10 md:gap-y-14 lg:gap-y-[72px] mt-6 sm:mt-10 md:mt-14 lg:mt-[72px]">
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://ethereum.org/" target="_blank" class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img
+                src="./assets/img/png/network-1.webp" loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://www.bnbchain.org/" target="_blank"
+              class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img src="./assets/img/png/network-2.webp"
+                loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://polygon.technology/" target="_blank"
+              class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img src="./assets/img/png/network-3.webp"
+                loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://www.avax.network/" target="_blank"
+              class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img src="./assets/img/png/network-4.webp"
+                loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://www.optimism.io/" target="_blank"
+              class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img src="./assets/img/png/network-5.webp"
+                loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://arbitrum.io/" target="_blank" class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img
+                src="./assets/img/png/network-6.webp" loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://base.org/" target="_blank" class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img
+                src="./assets/img/png/network-7.webp" loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://manta.net/" target="_blank" class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img
+                src="./assets/img/png/network-8.webp" loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://www.mantle.xyz/" target="_blank"
+              class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img src="./assets/img/png/network-9.webp"
+                loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://zksync.io/" target="_blank" class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img
+                src="./assets/img/png/network-10.webp" loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://linea.build/" target="_blank" class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img
+                src="./assets/img/png/network-11.webp" loading="lazy" class="w-full"></a>
+          </div>
+          <div class="w-1/4 px-1 sm:px-4 flex flex-col justify-center items-center">
+            <a href="https://taiko.xyz/" target="_blank" class="max-w-[90px] sm:max-w-[170px] lg:max-w-[200px]"><img
+                src="./assets/img/png/network-12.webp" loading="lazy" class="w-full"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer  -->
+  <footer>
+    <div class="footer-bg py-8 px-4">
+      <h2 class="text-2xl md:text-5xl text-white font-bold text-center">Join Our Community</h2>
+      <div class="flex flex-row justify-around max-w-[766px] mx-auto mt-12 md:mt-16 mb-6  text-center">
+        <div class="flex flex-col gap-4">
+          <a href="" target="_blank" rel="noopener noreferrer"> <img
+              src="./assets/img/png/icon-twitter.webp" alt="twitter" class="w-full max-w-[54px] mx-auto"></a>
+
+          <a href="" class="text-white text-base"> Twitter</a>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a href="" target="_blank" rel="noopener noreferrer"> <img
+              src="./assets/img/png//icon-tel.webp" alt="twitter" class="w-full max-w-[54px] mx-auto"></a>
+
+          <a href="" class="text-white text-base"> Telegram
+          </a>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a href="" target="_blank" rel="noopener noreferrer"> <img
+              src="./assets/img/png/icon-discord.webp" alt="twitter" class="w-full max-w-[54px] mx-auto"></a>
+
+          <a href="" class="text-white text-base"> Discord</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+  </script>
+</body>
+
+</html>
